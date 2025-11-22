@@ -18,7 +18,7 @@ except ImportError:
 #get full ursina module
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
-#get base64 for textures
+#get base64 for textures - not really needed now
 import base64
 from io import BytesIO
 from PIL import Image
@@ -51,8 +51,8 @@ player = FirstPersonController(
     jump_height=2
 )
 
-player.cursor.visible = False  #gets rid of original dot
-player.mouse_look = False #gets rid of built in rotation so i can do ads slow
+player.cursor.visible = False  #gets rid of original dot from ursina
+player.mouse_look = False 
 mouse.locked = True
 
 last_shot_time = 0
@@ -78,20 +78,20 @@ cybertruck = Entity(
 )
 
 cybertruck.texture_scale = (1, 1)
-cybertruck.double_sided = True  # optional, if needed
+cybertruck.double_sided = True 
 
 
 #=========================misc===========================
 
 floor = Entity(
-    model='plane',  # Use 'plane' for proper 3D collision
+    model='plane', 
     texture='assets/textures/floor.png',
     scale=(150, 1, 150),
     position=(0, 0, 0),
     collider='box'
 )
 
-floor.texture_scale = (150, 150)  # Tile the texture across the surface
+floor.texture_scale = (150, 150)  #tile so proper texture
 
 floor.texture_scale = (150, 150)
 
@@ -103,7 +103,7 @@ pause_menu = Entity(
     parent=camera.ui,
     enabled=False,
     model='quad',
-    color=color.rgba(0, 0, 0, 180),  #translucent black
+    color=color.rgba(0, 0, 0, 180), 
     scale=(0.5, 0.5),
     position=(0, 0)
 )
@@ -459,3 +459,4 @@ app.run()
 #================================================
 #Created by Gethin & James
 #================================================
+
